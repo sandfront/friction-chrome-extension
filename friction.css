@@ -1,0 +1,22 @@
+#fr_progress {
+    width: 100%;
+    background-color: grey;
+}
+#fr_bar {
+    width: 0%;
+    height: 30px;
+    background-color: #3F3F3F;
+}
+
+#friction_content {
+  position: fixed;
+  top: 50vh;
+}
+
+._3z_5, ._59tg {
+  background-color: #abc !important;
+}
+
+#pagelet_dock, #pagelet_sidebar, .uiToggle._4962._1z4y {
+  display: none;
+}
