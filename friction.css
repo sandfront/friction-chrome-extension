@@ -8,7 +8,7 @@
     background-color: #3F3F3F;
 }
 
-#friction_content {
+#fr_container {
   position: fixed;
   top: 50vh;
 }
@@ -17,6 +17,17 @@
   background-color: #abc !important;
 }
 
-#pagelet_dock, #pagelet_sidebar, .uiToggle._4962._1z4y {
+
+
+#pagelet_dock, #pagelet_sidebar, .uiToggle._4962._1z4y, ._2s25._606w > img, img._62bh._8o._8r._2qgu, img._10cu._8o._8r {
   display: none;
+}
+
+
+#blocker {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  background-color: white;
 }
