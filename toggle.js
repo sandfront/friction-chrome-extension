@@ -1,23 +1,24 @@
 // UI components
 
 // Create and insert toggle button and triggers creation of progress bar
-function toggleFeed(feed, container) {
+function toggleFeed(feed, fr_container) {
   var btn = document.createElement("BUTTON");
   var t = document.createTextNode("View the newsfeed");
   btn.setAttribute("id", "newsfeed_toggle");
   btn.appendChild(t);
-  container.insertAdjacentElement('afterbegin', btn);
+  fr_container.insertAdjacentElement('afterbegin', btn);
+
+  createLoad(btn);
 
   btn.addEventListener('click', (event) => {
     if (feed.style.display === 'none') {
-      moveThenReveal();
+      moveThenReveal(fr_container);
     } else {
-      feed.style.display = "none";x
-      container.style.display = "";
+      feed.style.display = "none";
+      fr_container.style.display = "";
     }
   });
 
-  createLoad(btn);
 }
 
 // Create and insert progress bar
@@ -33,42 +34,43 @@ function createLoad(btn) {
 }
 
 // Create and insert messenger.com PSA
-function chatPSA(container) {
+function chatPSA(fr_container) {
     var psa = document.createElement("div");
     var t = document.createTextNode("On facebook to send messages? Use messenger.com instead.");
     psa.appendChild(t)
     psa.setAttribute("id", "chatPSA");
-    container.insertAdjacentElement('afterbegin', psa)
+    fr_container.insertAdjacentElement('afterbegin', psa)
 }
 
 // Behaviour
-function moveThenReveal() {
+function moveThenReveal(fr_container) {
     var feed = document.getElementById('stream_pagelet');
     var bar = document.getElementById("fr_bar");
     var width = 1;
     var id = setInterval(frame, 10);
     function frame() {
-        if (width >= 100) {
-            clearInterval(id);
-            feed.style.display = '';
-            frictionContent.style.display = "none"
-        } else {
-            width++;
-            bar.style.width = width + '%';
-        }
+      if (width >= 100) {
+          clearInterval(id);
+          feed.style.display = '';
+          fr_container.style.display = "none";
+      } else {
+          width++;
+          bar.style.width = width + '%';
+      }
     }
 }
 
-function hideFeed(feed) {
+function hideFeed() {
+  var feed = document.getElementById('stream_pagelet');
+  var fr_container = document.getElementById('fr_container');
   feed.style.display = "none";
+  fr_container.style.display = "";
 }
 
 // Runtime functions
 function run() {
-  console.log("looking for feed")
   var feed = document.getElementById('stream_pagelet');
   if (feed) {
-    console.log("found feed, lets go")
     var fr_container = document.createElement("div")
     fr_container.setAttribute("id", "fr_container")
     feed.insertAdjacentElement('beforebegin', fr_container);
@@ -80,7 +82,6 @@ function run() {
 
 function check() {
   if (document.getElementById('fr_container') !== null) {
-    console.log("everything seems to be fine")
   } else {
     run()
   }
