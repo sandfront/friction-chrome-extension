@@ -1,6 +1,6 @@
 {
   "name": "Friction for Facebook",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Makes Facebook less addictive",
   "permissions": [
     "http://www.facebook.com/*",
