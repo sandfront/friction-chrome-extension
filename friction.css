@@ -28,16 +28,23 @@
 
 
 
-#pagelet_dock, #pagelet_sidebar, .uiToggle._4962._1z4y, ._2s25._606w > img, img._62bh._8o._8r._2qgu, img._10cu._8o._8r {
+#pagelet_dock, #pagelet_sidebar, .uiToggle._4962._1z4y, ._2s25._606w::after, ._2s25._606w > img, img._62bh._8o._8r._2qgu, img._10cu._8o._8r {
   display: none;
 }
-/*
 
-#blocker {
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  z-index: 99;
-  background-color: white;
+#newsfeed_toggle {
+  font-size: 10px;
 }
-*/
+
+#cancel_btn {
+  padding: 10px 60px;
+  font-size: 2em;
+  border-radius: 5px;
+  border: none;
+  background-color: #2ea907;
+  color: white;
+}
+
+#cancel_btn:hover {
+  background-color: #00CE12;
+}

@@ -1,5 +1,3 @@
-// UI components
-
 // Create and insert toggle button and triggers creation of progress bar
 function toggleFeed(feed, fr_container) {
   var btn = document.createElement("BUTTON");
@@ -21,7 +19,7 @@ function toggleFeed(feed, fr_container) {
 
 }
 
-// Create and insert progress bar
+// Create and insert progress bar with stop btn
 function createLoad(btn) {
   var progress = document.createElement("div");
   progress.setAttribute("id", "fr_progress");
@@ -29,14 +27,23 @@ function createLoad(btn) {
   var bar = document.createElement("div");
   progress.setAttribute("id", "fr_bar");
 
+  var stopBtn = document.createElement("BUTTON");
+  var t = document.createTextNode("Cancel");
+  stopBtn.setAttribute("id", "cancel_btn");
+  stopBtn.appendChild(t);
+  stopBtn.style.display = "none";
+
+
   btn.insertAdjacentElement('afterend', progress);
   progress.insertAdjacentElement('afterbegin', bar);
+  progress.insertAdjacentElement('afterend', stopBtn)
 }
 
 // Create and insert messenger.com PSA
 function chatPSA(fr_container) {
     var psa = document.createElement("div");
-    var t = document.createTextNode("On facebook to send messages? Use messenger.com instead.");
+    var msgs = ["On facebook to send messages? Use messenger.com instead.", "Delete facebook from your phone."]
+    var t = document.createTextNode(msgs[Math.floor(Math.random() * msgs.length)]);
     psa.appendChild(t)
     psa.setAttribute("id", "chatPSA");
     fr_container.insertAdjacentElement('afterbegin', psa)
@@ -46,17 +53,30 @@ function chatPSA(fr_container) {
 function moveThenReveal(fr_container) {
     var feed = document.getElementById('stream_pagelet');
     var bar = document.getElementById("fr_bar");
+    var stopBtn = document.getElementById("cancel_btn");
+
+    stopBtn.style.display = ""
+
     var width = 1;
-    var id = setInterval(frame, 10);
+    var id = setInterval(frame, 15);
+
     function frame() {
       if (width >= 100) {
           clearInterval(id);
           feed.style.display = '';
           fr_container.style.display = "none";
+          stopBtn.style.display = "none";
       } else {
           width++;
           bar.style.width = width + '%';
+          stopBtn.addEventListener('click', stopLoad)
       }
+    }
+
+    function stopLoad() {
+      clearInterval(id);
+      bar.style.width = 0 + '%';
+      stopBtn.style.display = "none";
     }
 }
 
