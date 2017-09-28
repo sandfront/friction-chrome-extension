@@ -58,7 +58,7 @@ function moveThenReveal(fr_container) {
     stopBtn.style.display = ""
 
     var width = 1;
-    var id = setInterval(frame, 15);
+    var id = setInterval(frame, 20);
 
     function frame() {
       if (width >= 100) {
