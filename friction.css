@@ -22,18 +22,17 @@
   font-size: 1.4em;
 }
 
-._3z_5, ._59tg {
+._3z_5, ._59tßg {
   background-color: #abc !important;
 }
-
 
 
 #pagelet_dock, #pagelet_sidebar, .uiToggle._4962._1z4y, ._2s25._606w::after, ._2s25._606w > img, img._62bh._8o._8r._2qgu, img._10cu._8o._8r, ._5bov {
   display: none;
 }
 
-/*hide the trending stories*/
-._5mym {
+/*hide the trending stories, popup, nextnotification, recent logins, logoutbadgenotific*/
+._5mym, ._10.uiLayer._4-hy._3qw, ._53ij, ._4bl9._ihf._8wm, ._51lp._1gb4 {
   display: none;
 }
 

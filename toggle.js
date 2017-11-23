@@ -42,7 +42,7 @@ function createLoad(btn) {
 // Create and insert messenger.com PSA
 function chatPSA(fr_container) {
     var psa = document.createElement("div");
-    var msgs = ["On facebook to send messages? Use messenger.com instead.", "Delete facebook from your phone. You don't need it."]
+    var msgs = ["On facebook to send messages? Use messenger.com instead.", "Delete facebook from your phone. You don't need it.", "Make sure to logout of Facebook when you're done."]
     var t = document.createTextNode(msgs[Math.floor(Math.random() * msgs.length)]);
     psa.appendChild(t)
     psa.setAttribute("id", "chatPSA");
