@@ -32,6 +32,15 @@
   display: none;
 }
 
+/*hide the trending stories*/
+._5mym {
+  display: none;
+}
+
+.fbFeedTicker {
+  display: none;
+}
+
 #newsfeed_toggle {
   font-size: 10px;
 }
