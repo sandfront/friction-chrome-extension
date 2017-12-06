@@ -113,6 +113,6 @@ run()
 // Need to continuously check page to make sure friction is running, since DOM doesn't reload on navigation
 window.setInterval(check, 1000)
 
-// Hide feed after 5 minutes
-window.setInterval(hideFeed, 300000);
+// Hide feed after 7 minutes
+window.setInterval(hideFeed, 450000);
 
