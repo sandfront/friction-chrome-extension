@@ -31,8 +31,8 @@
   display: none;
 }
 
-/*hide the trending stories, nextnotification, recent logins, logoutbadgenotific*/
-._5mym, ._53ij, ._4bl9._ihf._8wm, ._51lp._1gb4 {
+/*hide the trending stories, recent logins, logoutbadgenotific*/
+._5mym, ._4bl9._ihf._8wm, ._51lp._1gb4 {
   display: none;
 }
 
