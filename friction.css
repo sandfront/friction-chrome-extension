@@ -36,6 +36,11 @@
   display: none;
 }
 
+/*hide fb stories*/
+._4-u2._1-ib._2tyk._20os._4-u8 {
+  display: none;
+}
+
 .fbFeedTicker {
   display: none;
 }
